@@ -24,10 +24,13 @@
 | --- | --- | --- |
 | 阿里云 | [阿里云入口](https://developer.aliyun.com/article/771060?userCode=e0fuza3h) | 选择 x86_64 ECS；购买前向厂商确认允许用于 TURN/SRT 媒体中继 |
 | 腾讯云 | [腾讯云 CVM](https://cloud.tencent.com/product/cvm) | 选择 x86_64 云服务器、固定公网 IPv4，确认 UDP 与公网带宽 |
+| 雨云 | [雨云推荐入口](https://www.rainyun.com/ODA2NzMx_) · 推荐码 `ODA2NzMx` | 选择 RCS 云服务器、x86_64 Linux、独立公网 IPv4；不要选仅有 NAT 映射的套餐 |
+
+雨云新人五折券：使用推荐入口或推荐码 `ODA2NzMx` 注册，按活动要求绑定微信后领取；实际可领状态、有效期和适用产品以雨云账户及下单页面为准。该入口为推荐链接。
 
 优先选择靠近大多数成员的地域、普通 Linux 系统镜像和可稳定提供的公网出站带宽。建议 Ubuntu 24.04 LTS x86_64，系统盘 40 GB；不要选 ARM、应用集成镜像或会被随时回收的竞价实例。无需 GPU。云主机不负责转码，编码与解码由客户端完成。
 
-阿里云 [ECS 使用须知](https://help.aliyun.com/zh/ecs/user-guide/usage-notes)和[轻量应用服务器使用须知](https://help.aliyun.com/zh/simple-application-server/product-overview/usage-notes)均限制流量穿透类服务。本项目包含 TURN 中继，因此阿里云列为需先确认用途的选项，不表示厂商已批准 Relink。腾讯云也应按当前产品条款确认用途。
+阿里云 [ECS 使用须知](https://help.aliyun.com/zh/ecs/user-guide/usage-notes)和[轻量应用服务器使用须知](https://help.aliyun.com/zh/simple-application-server/product-overview/usage-notes)均限制流量穿透类服务。本项目包含 TURN 中继，因此阿里云列为需先确认用途的选项，不表示厂商已批准 Relink。腾讯云、雨云也应按当前产品条款确认用途。雨云需核对[服务器 IP](https://www.rainyun.com/docs/products/rcs/manual/ip)与[选购指南](https://www.rainyun.com/docs/products/rcs/buy/rcs)中的公网 IP、带宽和计费信息；NAT 端口映射套餐不符合本安装器要求。
 
 ### 人数与语音配置
 
