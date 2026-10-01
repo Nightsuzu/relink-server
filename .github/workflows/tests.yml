@@ -1,0 +1,31 @@
+name: Source checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --ignore-scripts
+      - run: python3 -m unittest discover -s tests -p 'test_*.py'
+      - run: npm test
+      - run: bash -n setup.sh
+      - run: node --check agent/agent.mjs
+      - name: Verify and build deployment bundle
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          python3 tools/fetch-components.py
+          python3 tools/build-bundle.py
+          chmod +x dist/room-node-2.1.3/mediamtx dist/room-node-2.1.3/ffprobe
+          dist/room-node-2.1.3/mediamtx --version
+          dist/room-node-2.1.3/ffprobe -version
+          python3 -c 'import json; from pathlib import Path; Path("dist/room-node-2.1.3/fixture.json").write_text(json.dumps(dict(version=1,nodeId="1"*32,token="2"*64,turnSecret="3"*64,publicHost="8.8.8.8",capacityMbps=100,serverUrl="wss://relinkus.cn/relink/ws")))'
+          bash dist/room-node-2.1.3/setup.sh plan --setup "$PWD/dist/room-node-2.1.3/fixture.json"
