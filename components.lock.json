@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "bundleVersion": "2.1.3",
+  "baseUrl": "https://relinkus.cn/server/components/20261002/",
+  "files": {
+    "mediamtx": {
+      "sha256": "ed09ea1ec8f659f2431a2f17e87b58c0ac600500b9ac904c1530dc37ff6ce1a3",
+      "bytes": 38375584
+    },
+    "ffprobe": {
+      "sha256": "2f867eb508fbfb6855eb411cdec23a2af60416463f96720a32d083bf9ab413f1",
+      "bytes": 2666432
+    },
+    "node-runtime.tar.xz": {
+      "sha256": "2f2c0da162318f0de47665410c7c8c2ed3d36c8f3105de4bbc61176c70a7cbf2",
+      "bytes": 31838904
+    },
+    "coturn-source.tar.gz": {
+      "sha256": "28d55294ac596fbd129b293a85e7bb1c5dc4bd15b7fb55c500f355149e5f4e28",
+      "bytes": 828514
+    },
+    "ffmpeg-source.tar.xz": {
+      "sha256": "cf38e0e28c7e5605942c4a77755349b0145804a397af37eb1fb4c77cb237f635",
+      "bytes": 12036420
+    }
+  }
+}

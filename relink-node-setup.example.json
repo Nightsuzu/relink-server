@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "nodeId": "REPLACE_WITH_REGISTERED_NODE_ID",
+  "token": "REPLACE_WITH_ISSUED_NODE_TOKEN",
+  "turnSecret": "REPLACE_WITH_ISSUED_TURN_SECRET",
+  "publicHost": "YOUR_PUBLIC_IPV4",
+  "capacityMbps": 100,
+  "serverUrl": "wss://relinkus.cn/relink/ws"
+}

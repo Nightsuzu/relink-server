@@ -1,0 +1,12 @@
+node_modules/
+dist/
+components/
+__pycache__/
+*.pyc
+relink-node-setup.json
+agent.json
+*.log
+.env
+.env.*
+*.pem
+*.key
