@@ -15,9 +15,10 @@ Relink 编写的节点代理、安装器、诊断工具、打包工具及部署�
 ## 快速开始
 
 1. 准备带公网 IPv4 的 Linux x64 云服务器，使用 systemd、glibc 2.28 或更新版本。
-2. Room 域主先向 Relink 运营申请登记节点，取得 `relink-node-setup.json`。**当前尚无客户端自助登记表单，示例配置不能用于接入。**
-3. 从[官网教程](https://relinkus.cn/server/)下载 `2.1.3` 部署包及 SHA-256 校验文件，解压，将配置放在部署包旁。
-4. 放行 TCP/UDP `3478`、UDP `8890` 和 UDP `49160–50183`，运行：
+2. 更新到 **Relink 1.0.5 自建服务器补丁（revision 3）**，在软件内选择「加入 / 创建 → 创建 Room → 使用自有服务器创建」，填写 Room 名称、服务器公网 IPv4 和可用出站带宽，点击「创建 Room 并生成配置」。
+3. 点击「保存节点配置」，把 `relink-node-setup.json` 上传到自己的服务器。配置可在创建后 30 分钟内恢复领取；断线或关闭软件后重新进入同一入口，即可继续原来的 Room。
+4. 从[官网教程](https://relinkus.cn/server/)下载 `2.1.3` 部署包及 SHA-256 校验文件，解压，将配置放在部署包旁。
+5. 放行 TCP/UDP `3478`、UDP `8890` 和 UDP `49160–50183`，运行：
 
 ```bash
 sudo bash setup.sh
@@ -30,7 +31,7 @@ bash setup.sh plan --setup /absolute/path/relink-node-setup.json
 sudo bash setup.sh doctor
 ```
 
-`plan` 只校验包及配置，不代表云服务器或公网通话已经验证。三个服务均为 `active` 后，还要确认官方接入状态，再用两个不同网络的客户端测试语音和屏幕共享。
+`plan` 只校验包及配置，不代表云服务器或公网通话已经验证。三个服务均为 `active` 后，还要在创建窗口确认“服务器已连接”，再用两个不同网络的客户端测试语音和屏幕共享。
 
 ## 从源码制作部署包
 
